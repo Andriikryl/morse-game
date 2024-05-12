@@ -1,3 +1,6 @@
+.hero{
+    position: relative;
+}
 .hero__box{
     display: flex;
     flex-direction: column;
@@ -38,4 +41,13 @@
     font-size: 28px;
     line-height: 120%;
     color: #fdf0d5;
+}
+
+.info{
+    position: absolute;
+    right: 0;
+    top: 20px;
+    background-color: #780000 !important;
+    color: #fdf0d5 !important;
+    border: none !important;
 }
