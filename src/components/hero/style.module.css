@@ -9,6 +9,7 @@
     max-width: 300px;
     text-align: center;
     position: relative;
+    margin-block-end: 20px;
 }
 .title__box::after{
     --size:300px;
@@ -25,4 +26,16 @@
     background-color: #780000;
     border-radius: 50%;
     z-index: 1;
+}
+
+
+.hero__description{
+    max-width: 300px;
+    margin-inline: auto;
+    text-align: center;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 120%;
+    color: #fdf0d5;
 }
