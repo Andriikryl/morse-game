@@ -1,0 +1,28 @@
+.hero__box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block-start: 50px;
+}
+
+.title__box{
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+}
+.title__box::after{
+    --size:300px;
+    --position: 50%;
+    --postionTransform: -50%;
+    content: "";
+    display: block;
+    width: var(--size);
+    height: var(--size);
+    position: absolute;
+    left: var(--position);
+    top: var(--position);
+    transform: translate(var(--postionTransform), var(--postionTransform));
+    background-color: #780000;
+    border-radius: 50%;
+    z-index: 1;
+}

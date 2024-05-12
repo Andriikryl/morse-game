@@ -1,3 +1,48 @@
+:root {
+  --txt-1: hsl(220 10% 98%);
+    --pay-bg: hsl(0, 0%, 100%);
+        --bg-1: hsl(43, 100%, 51%);
+        --bg-2: hsl(209, 100%, 20%);
+        --border: hsl(180 100% 50%);
+        --pulse: hsl(9 100% 64%);
+        --font-family: "Patrick Hand", sans-serif;
+  --second-family: "Inter", sans-serif;
+  --white: #fff;
+  --gray-1: #eee;
+  --gray-2: #d8d8d8;
+  --gray-3: #b4b4b4;
+  --gray-4: #929292;
+  --gray-5: #696969;
+  --gray-6: #454545;
+  --black: #1b1b1b;
+  --accent-red: #ef4136;
+  --accent-orange: #fa9248;
+  --accent-dandelion: #ffde75;
+  --accent-inchworm: #bce051;
+  --accent-green: #4da764;
+  --accent-caribbean-green: #37d4ad;
+  --accent-robins-egg-blue: #44cece;
+  --accent-blue-green: #2799b2;
+  --accent-blue-iii: #2b71db;
+  --accent-purple-heart: #633da2;
+  --accent-pink-flamingo: #ea82eb;
+  --accent-razzmatazz: #e23274;
+  --accent-light-red: #fff0f4;
+  --accent-light-orange: #ffeadb;
+  --accent-light-dandelion: #fff5d3;
+  --accent-light-inchworm: #f1fbd2;
+  --accent-light-green: #e1fbe7;
+  --accent-light-caribbean-green: #dafcf3;
+  --accent-light-robins-egg-blue: #d8fafa;
+  --accent-light-blue-green: #e6f9fe;
+  --accent-light-blue-iii: #edf4ff;
+  --accent-light-purple-heart: #f6f0ff;
+  --accent-light-pink-flamingo: #ffefff;
+  --accent-light-razzmatazz: #fff0f6;
+  --more-notification-color: #e05757;
+  --more-figma-variant: #9747ff;
+  --more-dot-grid-background: #fff;
+}
 /* Box sizing rules */
 *,
 *::before,
@@ -6,54 +51,8 @@
 }
 html, body {
     height: 100%;
+    background-color: var(--accent-red);
   }
-
-:root {
-	--txt-1: hsl(220 10% 98%);
-    --pay-bg: hsl(0, 0%, 100%);
-        --bg-1: hsl(43, 100%, 51%);
-        --bg-2: hsl(209, 100%, 20%);
-        --border: hsl(180 100% 50%);
-        --pulse: hsl(9 100% 64%);
-        --font-family: "Patrick Hand", sans-serif;
-	--second-family: "Inter", sans-serif;
-	--white: #fff;
-	--gray-1: #eee;
-	--gray-2: #d8d8d8;
-	--gray-3: #b4b4b4;
-	--gray-4: #929292;
-	--gray-5: #696969;
-	--gray-6: #454545;
-	--black: #1b1b1b;
-	--accent-red: #e12b56;
-	--accent-orange: #fa9248;
-	--accent-dandelion: #ffde75;
-	--accent-inchworm: #bce051;
-	--accent-green: #4da764;
-	--accent-caribbean-green: #37d4ad;
-	--accent-robins-egg-blue: #44cece;
-	--accent-blue-green: #2799b2;
-	--accent-blue-iii: #2b71db;
-	--accent-purple-heart: #633da2;
-	--accent-pink-flamingo: #ea82eb;
-	--accent-razzmatazz: #e23274;
-	--accent-light-red: #fff0f4;
-	--accent-light-orange: #ffeadb;
-	--accent-light-dandelion: #fff5d3;
-	--accent-light-inchworm: #f1fbd2;
-	--accent-light-green: #e1fbe7;
-	--accent-light-caribbean-green: #dafcf3;
-	--accent-light-robins-egg-blue: #d8fafa;
-	--accent-light-blue-green: #e6f9fe;
-	--accent-light-blue-iii: #edf4ff;
-	--accent-light-purple-heart: #f6f0ff;
-	--accent-light-pink-flamingo: #ffefff;
-	--accent-light-razzmatazz: #fff0f6;
-	--more-notification-color: #e05757;
-	--more-figma-variant: #9747ff;
-	--more-dot-grid-background: #fff;
-}
-
 
 main{
   z-index: 20;
