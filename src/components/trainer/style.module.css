@@ -1,0 +1,28 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+}
+.word__box{
+        background-color: #003049;
+        padding: 20px;
+        height: 80%;
+        display: grid;
+        place-items: center;
+}
+
+
+
+
+.control__group{
+    padding: 20px;
+    background-color: var(--white);
+}
+
+
+
+
+
+
+
+

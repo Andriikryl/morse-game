@@ -23,6 +23,7 @@ export default function Hero() {
           fun and to encourage people to keep at it.
         </p>
         <Link href={"/alphabet"}>alfabet</Link>
+        <Link href={"/play"}>play</Link>
       </div>
       <Button onClick={handlers.toggle} className={styles.info}>
         <>
