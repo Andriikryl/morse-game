@@ -1,9 +1,13 @@
 "use client";
 import React, { useEffect, useState, useCallback } from "react";
 import styles from "./style.module.css";
-import { SeparatedInput } from "../separatedInput/SeparatedInput";
 import { words } from "@/data/words";
 import { englishToMorse } from "@/data/morseDictionary";
+import clsx from "clsx";
+import VisuallyHidden from "../visuallyHidden/VisuallyHidden";
+import Dot from "@/icons/Dot";
+import Desh from "@/icons/Desh";
+import { Input } from "../input/Input";
 
 export default function Trainer() {
   const [value, setValue] = useState("");
@@ -21,7 +25,8 @@ export default function Trainer() {
   }, [currentIndex, currentWord, currentLetterIndex]);
 
   const handleChange = useCallback(
-    (newValue: string) => {
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const newValue = event.target.value;
       setValue(newValue);
       // Use type assertion to tell TypeScript that currentLetter is a key of englishToMorse
       if (
@@ -46,6 +51,25 @@ export default function Trainer() {
     },
     [currentLetter, currentLetterIndex, currentWord, currentIndex]
   );
+  const hendelCkickDot = () => {
+    setValue((prevValue) => {
+      const newValue = prevValue + ".";
+      handleChange({
+        target: { value: newValue },
+      } as React.ChangeEvent<HTMLInputElement>);
+      return newValue;
+    });
+  };
+
+  const hendelCkickDesh = () => {
+    setValue((prevValue) => {
+      const newValue = prevValue + "-";
+      handleChange({
+        target: { value: newValue },
+      } as React.ChangeEvent<HTMLInputElement>);
+      return newValue;
+    });
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -54,11 +78,9 @@ export default function Trainer() {
           {currentWord.split("").map((letter, index) => (
             <span
               key={index}
-              className={styles.letrer}
-              style={{
-                fontSize: index === currentLetterIndex ? "24px" : "16px",
-                color: index === currentLetterIndex ? "blue" : "black",
-              }}
+              className={clsx(styles.letrer, {
+                [styles.curent__letter]: index === currentLetterIndex,
+              })}
             >
               {letter}
             </span>
@@ -66,20 +88,21 @@ export default function Trainer() {
         </div>
       </div>
       <div className={styles.control__group}>
-        <SeparatedInput
-          MAX_DIGITS={6}
+        <Input
+          label="Morse code:"
           value={value}
           onChange={handleChange}
-          readOnly={false}
+          type="string"
         />
-        <div className={styles.sub__text}>
-          {matched ? (
-            <p className={styles.text}>Match!</p>
-          ) : (
-            <p className={styles.text}>
-              Enter the Morse code for the letter and remove via backspace
-            </p>
-          )}
+        <div className={styles.button__group}>
+          <button onClick={hendelCkickDot} className={styles.control__button}>
+            <VisuallyHidden>Dot</VisuallyHidden>
+            <Dot />
+          </button>
+          <button onClick={hendelCkickDesh} className={styles.control__button}>
+            <VisuallyHidden>Desh</VisuallyHidden>
+            <Desh />
+          </button>
         </div>
       </div>
     </div>
