@@ -41,6 +41,7 @@
     font-size: 28px;
     line-height: 120%;
     color: #fdf0d5;
+    margin-block-end: 20px;
 }
 
 .info{
@@ -50,4 +51,26 @@
     background-color: #780000 !important;
     color: #fdf0d5 !important;
     border: none !important;
+}
+
+.link{
+    text-transform: uppercase;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: var(--white);
+}
+
+.nav__list{
+    padding-inline-start: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 100%, 24%);
+    gap: 10px;
+    border: 2px solid hsl(4, 91%, 48%);
+    border-radius: 40px;
+    padding: 12px 14px 12px 14px;
 }

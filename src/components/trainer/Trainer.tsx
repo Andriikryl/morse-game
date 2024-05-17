@@ -4,14 +4,11 @@ import styles from "./style.module.css";
 import { words } from "@/data/words";
 import { englishToMorse } from "@/data/morseDictionary";
 import clsx from "clsx";
-import VisuallyHidden from "../visuallyHidden/VisuallyHidden";
-import Dot from "@/icons/Dot";
-import Desh from "@/icons/Desh";
 import { Input } from "../input/Input";
+import { motion } from "framer-motion";
 
 export default function Trainer() {
   const [value, setValue] = useState("");
-  const [matched, setMatched] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentWord, setCurrentWord] = useState(words[currentIndex]);
   const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
@@ -28,62 +25,47 @@ export default function Trainer() {
     (event: React.ChangeEvent<HTMLInputElement>) => {
       const newValue = event.target.value;
       setValue(newValue);
-      // Use type assertion to tell TypeScript that currentLetter is a key of englishToMorse
-      if (
-        newValue ===
-        englishToMorse[currentLetter as keyof typeof englishToMorse]
-      ) {
-        setMatched(true);
-        if (currentLetterIndex < currentWord.length - 1) {
-          // Move to the next letter
-          setCurrentLetterIndex(currentLetterIndex + 1);
-          setCurrentLetter(currentWord[currentLetterIndex + 1]);
-          setValue("");
-        } else {
-          // Move to the next word
-          setCurrentIndex((prevIndex) => prevIndex + 1);
-          setCurrentLetterIndex(0);
-          setCurrentWord(words[currentIndex + 1]);
-          setCurrentLetter(currentWord[0]);
-          setValue("");
+
+      // Wait for 500 milliseconds before checking the input
+      setTimeout(() => {
+        if (
+          newValue ===
+          englishToMorse[currentLetter as keyof typeof englishToMorse]
+        ) {
+          if (currentLetterIndex < currentWord.length - 1) {
+            // Move to the next letter
+            setCurrentLetterIndex(currentLetterIndex + 1);
+            setCurrentLetter(currentWord[currentLetterIndex + 1]);
+            setValue("");
+          } else {
+            // Move to the next word
+            setCurrentIndex((prevIndex) => prevIndex + 1);
+            setCurrentLetterIndex(0);
+            setCurrentWord(words[currentIndex + 1]);
+            setCurrentLetter(currentWord[0]);
+            setValue("");
+          }
         }
-      }
+      }, 1000); // Adjust the delay time as needed
     },
     [currentLetter, currentLetterIndex, currentWord, currentIndex]
   );
-  const hendelCkickDot = () => {
-    setValue((prevValue) => {
-      const newValue = prevValue + ".";
-      handleChange({
-        target: { value: newValue },
-      } as React.ChangeEvent<HTMLInputElement>);
-      return newValue;
-    });
-  };
-
-  const hendelCkickDesh = () => {
-    setValue((prevValue) => {
-      const newValue = prevValue + "-";
-      handleChange({
-        target: { value: newValue },
-      } as React.ChangeEvent<HTMLInputElement>);
-      return newValue;
-    });
-  };
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.word__box}>
         <div className={styles.letter__box}>
           {currentWord.split("").map((letter, index) => (
-            <span
+            <motion.span
+              layout
+              transition={{ type: "spring", duration: 1.8 }}
               key={index}
               className={clsx(styles.letrer, {
                 [styles.curent__letter]: index === currentLetterIndex,
               })}
             >
               {letter}
-            </span>
+            </motion.span>
           ))}
         </div>
       </div>
@@ -94,16 +76,6 @@ export default function Trainer() {
           onChange={handleChange}
           type="string"
         />
-        <div className={styles.button__group}>
-          <button onClick={hendelCkickDot} className={styles.control__button}>
-            <VisuallyHidden>Dot</VisuallyHidden>
-            <Dot />
-          </button>
-          <button onClick={hendelCkickDesh} className={styles.control__button}>
-            <VisuallyHidden>Desh</VisuallyHidden>
-            <Desh />
-          </button>
-        </div>
       </div>
     </div>
   );

@@ -22,8 +22,20 @@ export default function Hero() {
           I created this trainer to make the process of learning Morse code more
           fun and to encourage people to keep at it.
         </p>
-        <Link href={"/alphabet"}>alfabet</Link>
-        <Link href={"/play"}>play</Link>
+        <nav className={styles.nav}>
+          <ul role="list" className={styles.nav__list}>
+            <li className={styles.list__item}>
+              <Link className={styles.link} href={"/alphabet"}>
+                alfabet
+              </Link>
+            </li>
+            <li className={styles.list__item}>
+              <Link className={styles.link} href={"/play"}>
+                Typing
+              </Link>
+            </li>
+          </ul>
+        </nav>
       </div>
       <Button onClick={handlers.toggle} className={styles.info}>
         <>
