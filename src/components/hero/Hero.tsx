@@ -34,6 +34,11 @@ export default function Hero() {
                 Typing
               </Link>
             </li>
+            <li className={styles.list__item}>
+              <Link className={styles.link} href={"/cards"}>
+                Cards
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
