@@ -14,7 +14,7 @@
     overflow: hidden;
     border-top-left-radius: 1.5rem;
     border-top-right-radius: 1.5rem;
-    background-color: var(--white);
+    background-color: #780000;
 }
 
 
@@ -26,7 +26,7 @@
     z-index: 10;
     display: flex;
     justify-content: center;
-    background-color: var(--white);
+    background-color: #780000;
     padding: 1rem;
 }
 .button{
@@ -35,7 +35,7 @@
     cursor: grab;
     touch-action: none;
     border-radius: 9999px;
-    background-color: #ffc300;
+    background-color: var(--white);
     cursor: grabbing;
     border: none;
 }

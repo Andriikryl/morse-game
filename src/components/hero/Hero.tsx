@@ -39,6 +39,11 @@ export default function Hero() {
                 Cards
               </Link>
             </li>
+            <li className={styles.list__item}>
+              <Link className={styles.link} href={"/quiz"}>
+                quiz
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
