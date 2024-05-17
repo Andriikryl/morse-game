@@ -1,0 +1,92 @@
+.wrapper{
+  --min: 20ch;
+  --gap: 1rem;
+  display: grid;
+  place-items: center;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+}
+
+
+.face {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: silver;
+    backface-visibility: hidden;
+    background-color: hsl(0, 100%, 34%);
+    border-radius: 20px;
+  }
+
+  .letter{
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 63px;
+    line-height: 125%;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+
+  .morse{
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 63px;
+    line-height: 125%;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+  .back {
+    transform: rotateY(180deg);
+    display: grid;
+    place-items: center;
+    background-color: hsl(0, 100%, 24%);
+    border-radius: 20px;
+  }
+  .card{
+    cursor: pointer;
+    position: relative;
+    height: 300px; width: 200px;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+    border-radius: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
+    0 2px 2px rgba(0,0,0,0.15), 
+    0 4px 4px rgba(0,0,0,0.15), 
+    0 8px 8px rgba(0,0,0,0.15);
+    transition: all 500ms ease-in-out;
+  }
+  .card:hover{
+    box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+    0 2px 2px rgba(0,0,0,0.11), 
+    0 4px 4px rgba(0,0,0,0.11), 
+    0 8px 8px rgba(0,0,0,0.11), 
+    0 16px 16px rgba(0,0,0,0.11), 
+    0 32px 32px rgba(0,0,0,0.11);
+  }
+  .flipped {
+    transform: rotateY(180deg);
+  }
+
+  .link__back{
+    display: grid;
+    place-items: center;
+    place-content: center;
+    background-color: #780000;
+    color: #fdf0d5;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+.link__back svg{
+    position: relative;
+    left: 5px;
+}
+  
+.flex__group{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
