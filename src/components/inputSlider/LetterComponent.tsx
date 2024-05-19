@@ -13,7 +13,13 @@ const LetterComponent: React.FC<LetterProps> = ({ letter, word }) => {
   const imagePath = letterImages[letter];
   return (
     <div className={styles.letter__box}>
-      <Image src={imagePath} width={200} height={300} alt={letter} />
+      <Image
+        priority={false}
+        src={imagePath}
+        width={200}
+        height={300}
+        alt={letter}
+      />
       <span className={styles.word}>{word}</span>
     </div>
   );

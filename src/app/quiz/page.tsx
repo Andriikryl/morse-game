@@ -17,6 +17,7 @@ export default function Quiz() {
             <Back />
           </Link>
         </div>
+        <Heading headingLevel="h2">Coming soon</Heading>
       </div>
     </section>
   );
