@@ -44,6 +44,11 @@ export default function Hero() {
                 quiz
               </Link>
             </li>
+            <li className={styles.list__item}>
+              <Link className={styles.link} href={"/visualizing"}>
+                Visualizing
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
