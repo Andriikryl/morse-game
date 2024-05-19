@@ -1,0 +1,34 @@
+
+.link__back{
+    display: grid;
+    place-items: center;
+    place-content: center;
+    background-color: #780000;
+    color: #fdf0d5;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+.link__back svg{
+    position: relative;
+    left: 5px;
+}
+  
+.flex__group{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper{
+  margin-block-start: 100px;
+}
+
+.slider__box{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.25rem;
+  width: 100%;
+  max-width: 48rem;
+}
