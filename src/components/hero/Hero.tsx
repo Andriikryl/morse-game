@@ -49,6 +49,11 @@ export default function Hero() {
                 Visualizing
               </Link>
             </li>
+            <li className={styles.list__item}>
+              <Link className={styles.link} href={"/read"}>
+                read
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
