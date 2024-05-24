@@ -1,0 +1,40 @@
+.read__section{
+  margin-block-end: 50px;
+}
+.link__back{
+    display: grid;
+    place-items: center;
+    place-content: center;
+    background-color: #780000;
+    color: #fdf0d5;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+.link__back svg{
+    position: relative;
+    left: 5px;
+}
+  
+.flex__group{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.question{
+  margin-block-end: 100px;
+}
+
+.question__title{
+  color: white;
+  font-size: 40px;
+  margin-block-end: 10px;
+}
+
+.accordion__body{
+  color: white;
+  font-size: 25px;
+  padding-block-start: 10px;
+}
